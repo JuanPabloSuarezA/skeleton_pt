@@ -32,17 +32,21 @@ class _InfoPageState extends State<InfoPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text("Información de API"),
-        ),
-        body: cargando ? _mostrarEsqueleto() : _extraerInfo());
+    return SafeArea(
+      child: Scaffold(
+          appBar: AppBar(
+            title: Text("Información de API"),
+            backgroundColor: Colors.blue[200],
+            elevation: 0,
+          ),
+          body: cargando ? _mostrarEsqueleto() : _extraerInfo()),
+    );
   }
 
   Widget _mostrarEsqueleto() {
     List<Widget> listaVistas = [];
     for (var i = 0; i < 10; i++) {
-      for (var i = 0; i < 3; i++) {
+      for (var i = 0; i < 7; i++) {
         listaVistas.add(SizedBox(
           height: 10,
         ));
